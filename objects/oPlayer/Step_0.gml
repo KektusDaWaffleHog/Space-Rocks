@@ -11,6 +11,10 @@ if (global.game_state == "playing") {
         motion_add(image_angle + 180, acceleration); // Move backward (opposite direction)
     }
 
+	if speed > 0 && (!keyboard_check(ord("W")) || !keyboard_check(ord("S"))) {
+		speed *= 0.98;
+	}
+
     if (keyboard_check(ord("A"))) {
         image_angle += 4; // Turn left
     }
